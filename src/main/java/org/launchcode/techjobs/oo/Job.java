@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Job {
 
-    private int id;
+    private Integer id;
     private static int nextId = 1;
 
     private String name;
@@ -42,7 +42,7 @@ public class Job {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof Employer)) return false;
+        if (!(obj instanceof Job)) return false;
         Job job = (Job) obj;
         return getId() == job.getId();
     }
@@ -93,5 +93,54 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        Character firstLine = '\n';
+        Character lastLine = '\n';
+        String idInfo;
+        String nameInfo;
+        String employerInfo;
+        String locationInfo;
+        String positionTypeInfo;
+        String coreCompetencyInfo = "Core Competency: "+getCoreCompetency().getValue()+"\n";
+
+        if(this.id == null){
+            idInfo = "ID: "+"Data not available\n";
+        }else{
+            idInfo = "ID: "+getId()+"\n";
+        }
+
+        if(this.name.isEmpty()){
+            nameInfo = "Name: "+getName()+"Data not available\n";
+        }else{
+            nameInfo = "Name: "+getName()+"\n";
+        }
+
+        if(this.employer.getValue().isEmpty()){
+            employerInfo = "Employer: "+"Data not available\n";
+        }else{
+            employerInfo = "Employer: "+getEmployer().getValue()+"\n";
+        }
+
+        if(this.location.getValue().isEmpty()){
+            locationInfo = "Location: "+"Data not available\n";
+        }else{
+            locationInfo = "Location: "+getLocation().getValue()+"\n";
+        }
+
+        if(this.positionType.getValue().isEmpty()){
+            positionTypeInfo = "Position Type: "+"Data not available\n";
+        }else{
+            positionTypeInfo = "Position Type: "+getPositionType().getValue()+"\n";
+        }
+
+        if(this.coreCompetency.getValue().isEmpty()){
+            coreCompetencyInfo = "Core Competency: "+"Data not available\n";
+        }else{
+            coreCompetencyInfo = "Core Competency: "+getCoreCompetency().getValue()+"\n";
+        }
+        return "\n"+idInfo+nameInfo+employerInfo+locationInfo+positionTypeInfo+coreCompetencyInfo+"\n";
     }
 }
