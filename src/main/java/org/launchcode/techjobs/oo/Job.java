@@ -112,34 +112,34 @@ public class Job {
             idInfo = "ID: "+getId()+"\n";
         }
 
-        if(this.name.isEmpty()){
+        if(this.name.isEmpty() || name==null){
             nameInfo = "Name: "+getName()+"Data not available\n";
         }else{
             nameInfo = "Name: "+getName()+"\n";
         }
 
-        if(this.employer.getValue().isEmpty()){
+        if(this.employer.getValue().isEmpty() || employer==null){
             employerInfo = "Employer: "+"Data not available\n";
         }else{
             employerInfo = "Employer: "+getEmployer().getValue()+"\n";
         }
 
-        if(this.location.getValue().isEmpty()){
+        if(this.location.getValue().isEmpty() || location==null){
             locationInfo = "Location: "+"Data not available\n";
         }else{
             locationInfo = "Location: "+getLocation().getValue()+"\n";
         }
 
-        if(this.positionType.getValue().isEmpty()){
+        if(this.positionType.getValue().isEmpty() || positionType==null){
             positionTypeInfo = "Position Type: "+"Data not available\n";
         }else{
             positionTypeInfo = "Position Type: "+getPositionType().getValue()+"\n";
         }
 
-        if(this.coreCompetency.getValue().isEmpty()){
-            coreCompetencyInfo = "Core Competency: "+"Data not available\n";
+        if(this.coreCompetency.getValue().isEmpty() || coreCompetency==null){
+            coreCompetencyInfo = "Core Competency: "+"Data not available";
         }else{
-            coreCompetencyInfo = "Core Competency: "+getCoreCompetency().getValue()+"\n";
+            coreCompetencyInfo = "Core Competency: "+getCoreCompetency().getValue();
         }
         return "\n"+idInfo+nameInfo+employerInfo+locationInfo+positionTypeInfo+coreCompetencyInfo+"\n";
     }

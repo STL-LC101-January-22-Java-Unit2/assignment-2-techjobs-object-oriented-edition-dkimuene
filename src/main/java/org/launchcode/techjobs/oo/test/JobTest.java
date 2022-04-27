@@ -61,7 +61,7 @@ public class JobTest {
     }
 
     @Test
-    public void testTheToStringMethodForFirstAndLastLinesBlank(){
+    public void testToStringStartsAndEndsWithNewLine(){
         String info = job3.toString();
         String[] infoLine = info.split("");
         assertTrue(infoLine[0].equals("\n"));
@@ -69,7 +69,7 @@ public class JobTest {
     }
 
     @Test
-    public void testTheToStringMethodForEachFieldLabel(){
+    public void testToStringContainsCorrectLabelsAndData(){
         String info = job3.toString();
         String[] infoLine = info.split("\n");
 
@@ -82,7 +82,7 @@ public class JobTest {
     }
 
     @Test
-    public void testTheToStringMethodForEmptyData(){
+    public void testToStringHandlesEmptyField(){
         String info = job5.toString();
         String[] infoLine = info.split("\n");
         assertTrue(infoLine[1].equals("ID: "+job5.getId()));
