@@ -1,6 +1,5 @@
 package org.launchcode.techjobs.oo.test;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -13,27 +12,19 @@ import static org.junit.Assert.*;
  */
 @RunWith(JUnit4.class)
 public class JobTest {
-    Job job1;
-    Job job2;
-    Job job3;
-    Job job4;
-    Job job5;
 
-
-    @Before
-    public void createJobObjects(){
-        job1 = new Job();
-        job2 = new Job();
-        job3 = new Job("Product tester", new Employer("ACME"),
+    Job job1 = new Job();
+    Job job2 = new Job();
+    Job job3 = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        job4 = new Job("Product tester", new Employer("ACME"),
+    Job job4 = new Job("Product tester", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
-        job5 = new Job("Product tester", new Employer(""),
+    Job job5 = new Job("Product tester", new Employer(""),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency(""));
-    }
+
 
     @Test
     public void testSettingJobID(){
