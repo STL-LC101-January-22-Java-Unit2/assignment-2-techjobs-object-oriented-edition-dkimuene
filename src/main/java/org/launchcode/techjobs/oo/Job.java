@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Job {
 
-    private Integer id;
+    private int id;
     private static int nextId = 1;
 
     private String name;
@@ -106,13 +106,13 @@ public class Job {
         String positionTypeInfo;
         String coreCompetencyInfo = "Core Competency: "+getCoreCompetency().getValue()+"\n";
 
-        if(this.id == null){
+        if(this.id == 0){
            return "OOPS! This job does not seem to exist.";
         }else{
             idInfo = "ID: "+getId()+"\n";
         }
 
-        if(this.name.isEmpty() || name==null){
+        if(this.name.isEmpty() || name.isEmpty()){
             nameInfo = "Name: "+getName()+"Data not available\n";
         }else{
             nameInfo = "Name: "+getName()+"\n";

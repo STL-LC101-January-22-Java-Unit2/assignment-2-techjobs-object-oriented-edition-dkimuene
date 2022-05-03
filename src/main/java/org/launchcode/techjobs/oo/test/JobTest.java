@@ -54,9 +54,10 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         String info = job3.toString();
-        String[] infoLine = info.split("");
-        assertTrue(infoLine[0].equals("\n"));
-        assertTrue(infoLine[infoLine.length-1].equals("\n"));
+        char firstChar = job3.toString().charAt(0);
+        char lastChar = job3.toString().charAt(job3.toString().length()-1);
+        assertEquals('\n',firstChar);
+        assertEquals('\n',lastChar);
     }
 
     @Test
@@ -64,24 +65,24 @@ public class JobTest {
         String info = job3.toString();
         String[] infoLine = info.split("\n");
 
-        assertTrue(infoLine[1].equals("ID: "+job3.getId()));
-        assertTrue(infoLine[2].equals("Name: Product tester"));
-        assertTrue(infoLine[3].equals("Employer: ACME"));
-        assertTrue(infoLine[4].equals("Location: Desert"));
-        assertTrue(infoLine[5].equals("Position Type: Quality control"));
-        assertTrue(infoLine[6].equals("Core Competency: Persistence"));
+        assertEquals("ID: "+job3.getId(),infoLine[1]);
+        assertEquals("Name: Product tester",infoLine[2]);
+        assertEquals("Employer: ACME", infoLine[3]);
+        assertEquals("Location: Desert", infoLine[4]);
+        assertEquals("Position Type: Quality control", infoLine[5]);
+        assertEquals("Core Competency: Persistence", infoLine[6]);
     }
 
     @Test
     public void testToStringHandlesEmptyField(){
         String info = job5.toString();
         String[] infoLine = info.split("\n");
-        assertTrue(infoLine[1].equals("ID: "+job5.getId()));
-        assertTrue(infoLine[2].equals("Name: Product tester"));
-        assertTrue(infoLine[3].equals("Employer: Data not available"));
-        assertTrue(infoLine[4].equals("Location: Desert"));
-        assertTrue(infoLine[5].equals("Position Type: Quality control"));
-        assertTrue(infoLine[6].equals("Core Competency: Data not available"));
+        assertEquals("ID: "+job5.getId(),infoLine[1]);
+        assertEquals("Name: Product tester",infoLine[2]);
+        assertEquals("Employer: Data not available", infoLine[3]);
+        assertEquals("Location: Desert", infoLine[4]);
+        assertEquals("Position Type: Quality control", infoLine[5]);
+        assertEquals("Core Competency: Data not available", infoLine[6]);
 
     }
 }
