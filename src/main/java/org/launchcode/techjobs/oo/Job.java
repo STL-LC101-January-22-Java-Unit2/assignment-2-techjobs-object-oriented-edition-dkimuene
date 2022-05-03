@@ -107,7 +107,7 @@ public class Job {
         String coreCompetencyInfo = "Core Competency: "+getCoreCompetency().getValue()+"\n";
 
         if(this.id == 0){
-           return "OOPS! This job does not seem to exist.";
+            return "OOPS! This job does not seem to exist.";
         }else{
             idInfo = "ID: "+getId()+"\n";
         }
